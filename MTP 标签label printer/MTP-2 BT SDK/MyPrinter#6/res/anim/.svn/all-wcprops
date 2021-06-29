@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/17/trunk/android-misc-widgets/res/anim
+END
+slide_in_left.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3/trunk/android-misc-widgets/res/anim/slide_in_left.xml
+END
+slide_in_right.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/trunk/android-misc-widgets/res/anim/slide_in_right.xml
+END
+slide_in_top.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3/trunk/android-misc-widgets/res/anim/slide_in_top.xml
+END
+i_slide_in_left.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/8/trunk/android-misc-widgets/res/anim/i_slide_in_left.xml
+END
+i_slide_out_left.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/8/trunk/android-misc-widgets/res/anim/i_slide_out_left.xml
+END
+i_slide_in_right.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/8/trunk/android-misc-widgets/res/anim/i_slide_in_right.xml
+END
+i_slide_out_right.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/8/trunk/android-misc-widgets/res/anim/i_slide_out_right.xml
+END

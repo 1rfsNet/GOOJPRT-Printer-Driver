@@ -1,0 +1,26 @@
+   POS系列驱动打印机包括：
+
+     58mm 系列蓝牙热敏票据打印机：
+       POS-58     Series (不带刀)
+       POS-58C    Series (带刀)
+
+     80mm 系列蓝牙热敏票据打印机：
+       POS-80     Series (不带刀)
+       POS-8090   Series (不带刀)
+       POS-80C    Series (带刀)
+       
+
+     76mm 系列针式票据打印机：
+       POS-76     Series (不带刀)
+       POS-76C    Series (带刀)
+
+说明：POS 58 波特率：9600  端口：COM  流量控：XON/XOFF
+
+     Baudrate：9600
+
+
+     厦门精普电子科技有限公司
+Xiamen Jingpu Electronic Technology Co., Ltd.
+
+   http://www.xxsjpj.com/
+   http://www.xmjpjp.com/

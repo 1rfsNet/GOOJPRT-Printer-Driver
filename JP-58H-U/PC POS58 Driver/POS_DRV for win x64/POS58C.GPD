@@ -1,0 +1,1240 @@
+*GPDSpecVersion: "1.0"
+*Include: "StdNames.gpd"
+*GPDFileVersion: "1.0"
+*GPDFileName: "POS58C.GPD"
+*ModelName: "POS-58C"
+*MasterUnits: PAIR(203, 203)
+*ResourceDLL: "POS58.DLL"
+*PrinterType: SERIAL
+
+*Feature: Orientation
+{
+    *rcNameID: =ORIENTATION_DISPLAY
+    *DefaultOption: PORTRAIT
+    *Option: PORTRAIT
+    {
+        *rcNameID: =PORTRAIT_DISPLAY
+    }
+    *Option: LANDSCAPE_CC270
+    {
+        *rcNameID: =LANDSCAPE_DISPLAY
+    }
+}
+
+*Feature: InputBin
+{
+    *rcNameID: =PAPER_SOURCE_DISPLAY		
+    *DefaultOption: MANUAL
+
+    *Option: MANUAL
+    {
+        *rcNameID: =MANUAL_FEED_DISPLAY	
+    }
+}
+
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY	
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *Name: "203 x 203 " =DOTS_PER_INCH
+        *DPI: PAIR(203, 203)
+        *TextDPI: PAIR(203, 203)
+        *PinsPerLogPass: 24
+        *SpotDiameter: 170
+        *Command: CmdSendBlockData { *Cmd : "<1D>v0<00>" %l{NumOfDataBytes /24} "<1800>"}
+    }
+}
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY	
+    *DefaultOption: Option3
+    *Option: Option1
+    {
+        *rcNameID: 257
+        *PageDimensions: PAIR(384, 1678)
+        *PrintableArea: PAIR(384, 1678)
+        *PrintableOrigin: PAIR(0, 0)
+    }
+    *Option: Option2
+    {
+        *rcNameID: 258
+        *PageDimensions: PAIR(384, 2374)
+        *PrintableArea: PAIR(384, 2374)
+        *PrintableOrigin: PAIR(0, 0)
+    }
+    *Option: Option3
+    {	
+        *rcNameID: 260
+        *PageDimensions: PAIR(384, 26182)
+        *PrintableArea: PAIR(384, 26182)
+        *PrintableOrigin: PAIR(0, 0)
+    }
+    *Option: CUSTOMSIZE
+    {
+        *rcNameID: =USER_DEFINED_SIZE_DISPLAY
+        *MinSize: PAIR(80, 80)
+        *MaxSize: PAIR(384, 32767)
+        *MaxPrintableWidth: 384
+        *MinLeftMargin: 0
+        *CenterPrintable?: TRUE
+    }
+}
+*Feature: Halftone
+{
+    *rcNameID: =HALFTONING_DISPLAY	
+    *DefaultOption: HT_PATSIZE_AUTO
+    *Option: HT_PATSIZE_AUTO
+    {
+        *rcNameID: =HT_AUTO_SELECT_DISPLAY
+    }
+    *Option: HT_PATSIZE_SUPERCELL_M
+    {
+        *rcNameID: =HT_SUPERCELL_DISPLAY
+    }
+    *Option: HT_PATSIZE_6x6_M
+    {
+        *rcNameID: =HT_DITHER6X6_DISPLAY
+    }
+    *Option: HT_PATSIZE_8x8_M
+    {
+        *rcNameID: =HT_DITHER8X8_DISPLAY
+    }
+}
+*%===================================================================
+*Feature: xpCashDrawer			*%cash select
+{
+    *rcNameID: 261
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 262
+    }
+    *Option: Option2
+    {
+        *rcNameID: 263
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>p<0019FF>"
+        }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 264
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>p<0119FF>"
+        }
+    }
+    *Option: Option4
+    {
+        *rcNameID: 265
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>p<0019FF1B>p<0119FF>"
+        }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 266
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>q<0019FF>"
+        }
+    }
+    *Option: Option6
+    {
+        *rcNameID: 267
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>q<0119FF>"
+        }
+    }
+    *Option: Option7
+    {
+        *rcNameID: 268
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.2
+            *Cmd: "<1B>q<0019FF1B>q<0119FF>"
+        }
+    }
+}
+*Feature: xpCutterSelect		*%Cutter select
+{
+    *rcNameID: 269
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 270
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.4
+            *Cmd: "<1D>UB<0218>"
+        }
+    }
+    *Option: Option2
+    {        
+        *rcNameID: 271
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.4
+            *Cmd: "<1D>UB<0118>"
+        }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 272
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.4
+            *Cmd: "<1B>J<30>"
+        }
+    }
+    *Option: Option4
+    {
+        *rcNameID: 273
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B>J<B4>"
+        }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 274
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.4
+            *Cmd: "<1B>J<B4>"
+        }
+    }
+}
+*Feature: xpJobEndFeedPaper	*%Feed Paper After Job End
+{
+    *rcNameID: 275
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 276
+    }
+    *Option: Option2
+    {
+        *rcNameID: 277
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4A18><1D500000>"
+        }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 278
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4A30><1D500000>"
+        }
+    }    
+    *Option: Option4
+    {
+        *rcNameID: 279
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4A48><1D500000>"
+        }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 280
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4A60><1D500000>"
+        }
+    } 
+     
+    *Option: Option6
+    {
+        *rcNameID: 281
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4A78><1D500000>"
+        }
+    }
+    *Option: Option7
+    {
+        *rcNameID: 282
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4A90><1D500000>"
+        }
+    }    
+    *Option: Option8
+    {
+        *rcNameID: 283
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4AA8><1D500000>"
+        }
+    }
+    *Option: Option9
+    {
+        *rcNameID: 284
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4AC0><1D500000>"
+        }
+    }
+    
+    *Option: Option10
+    {
+        *rcNameID: 285
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4AD8><1D500000>"
+        }
+    }
+    *Option: Option11
+    {
+        *rcNameID: 286
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4AF0><1D500000>"
+        }
+    }    
+    *Option: Option12
+    {
+        *rcNameID: 287
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4AFF1B4A08><1D500000>"
+        }
+    }
+    *Option: Option13
+    {
+        *rcNameID: 288
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4AFF1B4A20><1D500000>"
+        }
+    }
+    
+    *Option: Option14
+    {
+        *rcNameID: 289
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4AFF1B4A38><1D500000>"
+        }
+    }
+    *Option: Option15
+    {
+        *rcNameID: 290
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4AFF1B4A50><1D500000>"
+        }
+    }    
+    *Option: Option16
+    {
+        *rcNameID: 291
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2 
+            *Cmd: "<1D5000B4><1B4AFF1B4A68><1D500000>"
+        }
+    }
+    *Option: Option17
+    {
+        *Name: "90mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.2
+            *Cmd: "<1D5000B4><1B4AFF1B4A70><1D500000>"
+        }
+    }
+}
+*Feature: xpPrintAlarm			*%Printing Alarm
+{
+    *rcNameID: 310
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 311
+    }
+    *Option: Option2
+    {
+        *rcNameID: 312
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.5 
+            *Cmd: "<1B43040203>"
+        }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 313
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.1
+            *Cmd: "<1B43040203>"
+        }
+    }    
+    *Option: Option4
+    {
+        *rcNameID: 314
+        *Command: CmdSelect
+        {
+            *Order: JOB_FINISH.6 
+            *Cmd: "<1B43040203>"
+        }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 315
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.5
+            *Cmd: "<1B43040203>"
+        }
+    }  
+}
+*Feature: xpTopLogoPrint		*%Print Top NV LOGO
+{
+    *rcNameID: 292
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *rcNameID: 296
+    }
+    *Option: Option2
+    {
+        *rcNameID: 297
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0100>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0101>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0102>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0103>"
+					        }
+              }
+         }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 298
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0200>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0201>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0202>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0203>"
+					        }
+              }
+         }
+    }
+    *Option: Option4
+    {
+        *rcNameID: 299
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0300>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0301>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0302>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0303>"
+					        }
+              }
+         }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 300
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0400>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0401>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0402>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0403>"
+					        }
+              }
+         }
+    }
+    *Option: Option6
+    {
+        *rcNameID: 301
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0500>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0501>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0502>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0503>"
+					        }
+              }
+         }
+    }
+    *Option: Option7
+    {
+        *rcNameID: 302
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0600>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0601>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0602>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0603>"
+					        }
+              }
+         }
+    }
+    *Option: Option8
+    {
+        *rcNameID: 303
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0700>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0701>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0702>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0703>"
+					        }
+              }
+         }
+    }
+    *Option: Option9
+    {
+        *rcNameID: 304
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0800>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0801>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0802>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0803>"
+					        }
+              }
+         }
+    }
+    *Option: Option10
+    {
+        *rcNameID: 305
+        *switch: xpTopLogoMode
+         {
+              *case: xpTopLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0900>"
+					        }
+              }
+              *case: xpTopLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0901>"
+					        }
+              }
+              *case: xpTopLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0902>"
+					        }
+              }
+              *case: xpTopLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: DOC_SETUP.3
+					            *Cmd: "<1B>a<011C>p<0903>"
+					        }
+              }
+         }
+    }
+}
+*Feature: xpTopLogoMode			*%Top NV LOGO Mode
+{
+    *rcNameID: 293
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: xpTopLogoNormal
+    *Option: xpTopLogoNormal
+    {
+        *rcNameID: 306
+    }
+    *Option: xpTopLogoDoubleWidth
+    {
+        *rcNameID: 307
+    }
+    *Option: xpTopLogoDoubleHeight
+    {
+        *rcNameID: 308
+    }
+    *Option: xpTopLogoQuadruple
+    {
+        *rcNameID: 309
+    }
+}
+*Feature: xpBottomLogoPrint	*%Print Bottom NV LOGO
+{
+    *rcNameID: 294
+    *FeatureType: PRINTER_PROPERTY
+    *DefaulBottomtion: Option1
+    *Option: Option1
+    {
+        *rcNameID: 296
+    }
+    *Option: Option2
+    {
+        *rcNameID: 297
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0100>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0101>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0102>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0103>"
+					        }
+              }
+         }
+    }
+    *Option: Option3
+    {
+        *rcNameID: 298
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0200>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0201>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0202>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0203>"
+					        }
+              }
+         }
+    }
+    *Option: Option4
+    {
+        *rcNameID: 299
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0300>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0301>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0302>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0303>"
+					        }
+              }
+         }
+    }
+    *Option: Option5
+    {
+        *rcNameID: 300
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0400>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0401>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0402>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0403>"
+					        }
+              }
+         }
+    }
+    *Option: Option6
+    {
+        *rcNameID: 301
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0500>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0501>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0502>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0503>"
+					        }
+              }
+         }
+    }
+    *Option: Option7
+    {
+        *rcNameID: 302
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0600>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0601>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0602>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0603>"
+					        }
+              }
+         }
+    }
+    *Option: Option8
+    {
+        *rcNameID: 303
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0700>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0701>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0702>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0703>"
+					        }
+              }
+         }
+    }
+    *Option: Option9
+    {
+        *rcNameID: 304
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0800>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0801>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0802>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0803>"
+					        }
+              }
+         }
+    }
+    *Option: Option10
+    {
+        *rcNameID: 305
+        *switch: xpBottomLogoMode
+         {
+              *case: xpBottomLogoNormal
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0900>"
+					        }
+              }
+              *case: xpBottomLogoDoubleWidth
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0901>"
+					        }
+              }
+              *case: xpBottomLogoDoubleHeight
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0902>"
+					        }
+              }
+              *case: xpBottomLogoQuadruple
+              {
+					        *Command: CmdSelect
+					        {
+					            *Order: PAGE_FINISH.1
+					            *Cmd: "<1B>a<011C>p<0903>"
+					        }
+              }
+         }
+    }
+}
+*Feature: xpBottomLogoMode	*%Botteom NV LOGO Mode
+{
+    *rcNameID: 295
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: xpBottomLogoNormal
+    *Option: xpBottomLogoNormal
+    {
+        *rcNameID: 306
+    }
+    *Option: xpBottomLogoDoubleWidth
+    {
+        *rcNameID: 307
+    }
+    *Option: xpBottomLogoDoubleHeight
+    {
+        *rcNameID: 308
+    }
+    *Option: xpBottomLogoQuadruple
+    {
+        *rcNameID: 309
+    }
+}
+*%===================================================================
+*Command: CmdStartDoc
+{
+    *Order: DOC_SETUP.1
+    *Cmd: "<1B>@"
+}
+*Command: CmdEndJob
+{
+    *Order: JOB_FINISH.5
+    *Cmd: "<1B>r<1D>T"
+}
+*Command: CmdEndPage
+{
+    *Order: PAGE_FINISH.4
+    *Cmd: "<1D>S"
+}
+
+*RotateCoordinate?: FALSE
+*RotateRaster?: FALSE
+*RotateFont?: FALSE
+*switch: Orientation
+{
+    *case: PORTRAIT
+    {
+        *TextCaps: LIST(TC_OP_CHARACTER,TC_EA_DOUBLE,TC_IA_ABLE,TC_UA_ABLE,TC_RA_ABLE)
+    }
+    *case: LANDSCAPE_CC270
+    {
+        *TextCaps: LIST(TC_OP_CHARACTER,TC_RA_ABLE)
+    }
+}
+*CursorXAfterCR: AT_PRINTABLE_X_ORIGIN
+*YMoveAttributes: LIST(SEND_CR_FIRST)
+*XMoveThreshold: 0
+*YMoveThreshold: *
+*XMoveUnit: 203
+*YMoveUnit: 203
+
+*Command: CmdXMoveAbsolute { *Cmd : "<001B>$" %l{DestX} }
+*Command: CmdYMoveRelDown {  *Cmd : "<1B>J" %c[0,255]{max_repeat( DestYRel )} }
+
+*Command: CmdCR { *Cmd : "<>" }
+*Command: CmdLF { *Cmd : "<>" }
+*Command: CmdFF { *Cmd : "<>" }
+
+*EjectPageWithFF?: TRUE
+*OutputDataFormat: H_BYTE
+*OptimizeLeftBound?: FALSE
+*CursorXAfterSendBlockData: AT_GRXDATA_END
+*CursorYAfterSendBlockData: NO_MOVE
+*DefaultCTT: 0

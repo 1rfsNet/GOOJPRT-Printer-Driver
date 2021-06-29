@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:padding="10dp" >
+
+    <ProgressBar
+        android:id="@+id/progressBarStatus"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:padding="5dp"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMainMenuData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuData"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_normallabel_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="数据"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayoutMainMenuTicket"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuTicket"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_normaltickets_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="出货单"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMainMenuSimpleTest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuSimpleTest"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_normaltickets_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="@string/simpletest"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMainMenuOpenDocument"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuOpenDocument"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_opendocument_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="打开存档"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMainMenuSettings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="invisible" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuSettings"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_settings_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="设置"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+			<LinearLayout
+                android:id="@+id/linearLayoutMainMenuAdvanceLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuAdvanceLabel"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_advancelabel_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="@string/label"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+           
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
+
+             <LinearLayout
+                android:id="@+id/linearLayoutMainMenuUSB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuUSB"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_bluetooth_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="@string/usb"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMainMenuBluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuBluetooth"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_bluetooth_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="@string/bluetooth"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMainMenuMore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_linearlayout_big_button"
+                android:clickable="true"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonMainMenuMore"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/main_menu_more_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:text="@string/more"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

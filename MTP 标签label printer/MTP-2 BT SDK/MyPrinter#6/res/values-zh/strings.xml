@@ -1,0 +1,54 @@
+<resources>
+
+    <string name="app_name">LabelPrinter</string>
+	<string name="welcome">欢迎使用</string>
+	<string name="editlabel">编辑标签</string>
+	<string name="picture">图片</string>
+	<string name="text">文本</string>
+	<string name="hardtext">硬字库</string>
+	<string name="barcode">条形码</string>
+	<string name="qrcode">二维码</string>
+	<string name="pdf417">PDF417</string>
+	<string name="box">方框</string>
+	<string name="line">线段</string>
+	<string name="rect">矩形</string>
+	<string name="newlabel">新建</string>
+	<string name="openlabel">打开</string>
+	<string name="savelabel">保存</string>
+	<string name="paper">纸张</string>
+	<string name="settings">设置</string>
+	<string name="modify">修改</string>
+	<string name="delete">删除</string>
+	
+	<string name="simpletest">简单测试</string>
+	<string name="label">标签</string>
+	<string name="bluetooth">蓝牙</string>
+	<string name="more">更多</string>
+	<string name="usb">USB</string>
+	
+	<string name="help">帮助</string>
+	
+	<string name="searchbtdevice">搜索蓝牙设备</string>
+	
+	<string name="printqrcode">打印二维码</string>
+	<string name="printbarcode">打印条码</string>
+	<string name="printtext">打印文本</string>
+	<string name="printpicture">打印图片</string>
+	
+	<string name="content">内容</string>
+	<string name="type">类型</string>
+	<string name="width">宽度</string>
+	<string name="height">高度</string>
+	<string name="setbarcodeformat">设置条码格式</string>
+	
+	<string name="linewidth">线宽</string>
+	<string name="startpoint">起点坐标</string>
+	<string name="endpoint">终点坐标</string>
+	<string name="line.ps">PS. 屏幕左上角坐标为（0，0），向右为X轴方向，向下为Y轴方向。</string>
+	
+	<string name="size">大小</string>
+	
+	<string name="exit">退出</string>
+	
+	<string name="mode">模式</string>
+</resources>

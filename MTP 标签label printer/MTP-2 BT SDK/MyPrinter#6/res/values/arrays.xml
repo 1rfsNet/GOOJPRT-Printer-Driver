@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="easings">
+        <item>Back-In</item>
+        <item>Back-Out</item>
+        <item>Back-In-Out</item>
+        <item>Elastic-In</item>
+        <item>Elastic-Out</item>
+        <item>Elastic-In-Out</item>
+        <item>Bounce-In</item>
+        <item>Bounce-Out</item>
+        <item>Bounce-In-Out</item>
+        <item>Circ-In</item>
+        <item>Circ-Out</item>
+        <item>Circ-In-Out</item>
+        <item>Expo-In</item>
+        <item>Expo-Out</item>
+        <item>Expo-In-Out</item>
+        <item>Quad-In</item>
+        <item>Quad-Out</item>
+        <item>Quad-In-Out</item>
+        <item>Cubic-In</item>
+        <item>Cubic-Out</item>
+        <item>Cubic-In-Out</item>
+        <item>Quart-In</item>
+        <item>Quart-Out</item>
+        <item>Quart-In-Out</item>
+        <item>Quint-In</item>
+        <item>Quint-Out</item>
+        <item>Quint-In-Out</item>
+        <item>Sine-In</item>
+        <item>Sine-Out</item>
+        <item>Sine-In-Out</item>
+    </string-array>
+    <string-array name="months">
+        <item>january</item>
+        <item>february</item>
+        <item>march</item>
+        <item>april</item>
+        <item>may</item>
+        <item>june</item>
+        <item>july</item>
+        <item>august</item>
+        <item>september</item>
+        <item>october</item>
+        <item>november</item>
+        <item>december</item>
+    </string-array>
+    <string-array name="seasons">
+        <item>spring</item>
+        <item>summer</item>
+        <item>autumn</item>
+        <item>winter</item>
+    </string-array>
+    <string-array name="spinner_barcodetype">
+        <item>UPC-A</item>
+        <item>UPC-E</item>
+        <item>EAN13</item>
+        <item>EAN8</item>
+        <item>CODE39</item>
+        <item>I25</item>
+        <item>CODABAR</item>
+        <item>CODE93</item>
+        <item>CODE128</item>
+        <item>CODE11</item>
+        <item>MSI</item>
+        <item>128M</item>
+        <item>EAN128</item>
+        <item>25C</item>
+        <item>39C</item>
+        <item>39</item>
+        <item>EAN13+2</item>
+        <item>EAN13+5</item>
+        <item>EAN8+2</item>
+        <item>EAN8+5</item>
+        <item>POST</item>
+        <item>UPCA+2</item>
+        <item>UPCA+5</item>
+        <item>UPCE+2</item>
+        <item>UPCE+5</item>
+        <item>CPOST</item>
+        <item>MSIC</item>
+        <item>PLESSEY</item>
+        <item>ITF14</item>
+        <item>EAN14</item>
+    </string-array>
+    <string-array name="spinner_fontsize">
+        <item>24</item>
+        <item>32</item>
+        <item>48</item>
+        <item>72</item>
+    </string-array>
+    <string-array name="spinner_barcodetype_oked">
+        <item>UPC-A</item>
+        <item>UPC-E</item>
+        <item>I25</item>
+    </string-array>
+    <string-array name="spinner_barcode_unitwidth">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>

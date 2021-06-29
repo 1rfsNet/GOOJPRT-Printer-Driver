@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:panel="http://schemas.android.com/apk/res/com.lvrenyang"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_main" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" >
+
+            <ImageButton
+                android:id="@+id/imageButtonEditCaptionReturn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/selector_linearlayout_small_button"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/edit_caption_return_gray_noborder" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/editlabel"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
+            <ImageButton
+                android:id="@+id/imageButtonEditCaptionPrint"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_linearlayout_small_button"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/edit_caption_print_gray_noborder" />
+        </RelativeLayout>
+
+        <!-- background=CCFFFF -->
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignLeft="@+id/relativeLayout1"
+            android:layout_below="@+id/relativeLayout1"
+            android:background="#FFFFFF"
+            android:padding="5dp"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertPicture"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertPicture"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_picture_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/picture"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertPlaintext"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertPlaintext"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_plaintext_color_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/text"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertHardtext"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:visibility="gone" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertHardtext"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_hardtext_color_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/hardtext"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertBarcode"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertBarcode"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_barcode_black_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/barcode"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertQRCode"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertQRCode"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_qrcode_black_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/qrcode"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertPDF417"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:visibility="gone" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertPDF417"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_pdf417_black_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/pdf417"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertBox"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertBox"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_box_black_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/box"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertLine"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:visibility="gone" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertLine"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_line_black_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/line"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertRectangle"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertRectangle"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_insert_rectangle_black_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/rect"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditInsertGrid"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditInsertGrid"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/grid" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="表格"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="#FFFFFF"
+            android:padding="5dp"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFileNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFileNew"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_file_new_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/newlabel"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFileOpen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFileOpen"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_file_open_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/openlabel"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFileSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFileSave"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_file_save_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/savelabel"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFilePaperSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFilePaperSet"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_file_paperset_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/paper"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFileSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonFileSettings"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/edit_file_settings_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/settings"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <!-- LabelLayout -->
+
+        <com.lvrenyang.labelview.HVScrollView
+            android:id="@+id/hvScrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="140dp" >
+
+            <LinearLayout
+                android:id="@+id/linearLayoutFocus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical" >
+
+                <com.lvrenyang.labelview.LabelLayout
+                    android:id="@+id/labelLayoutLabelPage"
+                    android:layout_width="480px"
+                    android:layout_height="800px"
+                    android:layout_margin="100px"
+                    android:background="#FFFFCC" >
+                </com.lvrenyang.labelview.LabelLayout>
+            </LinearLayout>
+        </com.lvrenyang.labelview.HVScrollView>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="140dp" >
+
+            <ScrollView
+                android:id="@+id/verticalruler"
+                android:layout_width="50px"
+                android:layout_height="wrap_content"
+                android:fillViewport="true" >
+
+                <ImageView
+                    android:layout_width="50px"
+                    android:layout_height="1000px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="0dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/vertical" />
+            </ScrollView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="140dp" >
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalruler"
+                android:layout_width="wrap_content"
+                android:layout_height="50px"
+                android:fillViewport="true" >
+
+                <ImageView
+                    android:layout_width="1000px"
+                    android:layout_height="50px"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="0dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/horizontal" />
+            </HorizontalScrollView>
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutPanel"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditItemMenuChange"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditItemMenuChange"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/path_menu_change_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/modify"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditItemMenuDelete"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEditItemMenuDelete"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/path_menu_delete_gray_noborder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="@string/delete"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEditItemMenuLock"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ToggleButton
+                        android:id="@+id/toggleButtonEditItemMenuLock"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/selector_togglebutton_lock"
+                        android:scaleType="fitCenter"
+                        android:textOff=""
+                        android:textOn="" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:text="锁定"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="100dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_linearlayout_small_button"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <ToggleButton
+                        android:id="@+id/toggleButtonPageLock"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/selector_togglebutton_lock"
+                        android:scaleType="fitCenter"
+                        android:textOff=""
+                        android:textOn="" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

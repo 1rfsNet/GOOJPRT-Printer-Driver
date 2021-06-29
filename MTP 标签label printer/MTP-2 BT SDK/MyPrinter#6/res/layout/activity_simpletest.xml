@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/background_main"
+    android:padding="10dp" >
+
+    <Button
+        android:id="@+id/buttonPrintQRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/printqrcode" />
+    <Button
+        android:id="@+id/buttonPrintBarcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonPrintQRCode"
+        android:text="@string/printbarcode" />
+	<Button
+        android:id="@+id/buttonPrintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonPrintBarcode"
+        android:layout_alignParentRight="true"
+        android:text="@string/printtext" />
+	<Button
+        android:id="@+id/buttonPrintPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonPrintText"
+        android:layout_alignParentRight="true"
+        android:text="@string/printpicture" />
+</RelativeLayout>
